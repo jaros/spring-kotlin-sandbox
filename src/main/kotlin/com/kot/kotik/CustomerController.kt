@@ -10,6 +10,9 @@ class CustomerController(val repository: CustomerRepository) {
     @GetMapping("/")
     fun findAll() = repository.findAll()
 
-    @GetMapping("/{name}")
+    @GetMapping("/searchByName/{name}")
     fun findByLastName(@PathVariable name: String) = repository.findByLastName(name)
+
+    @GetMapping("/foo")
+    fun foo() = "hello foo World"
 }
